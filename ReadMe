@@ -1,0 +1,45 @@
+The Code has the following folders and contents
+
+---------
+Folder_1: Client_side_scripts:
+---------
+
+--> id_rsa is the private key
+--> id_rsa.pub is the public key
+--unmount.sh : Script to unmount and initiate the Deduplication process the server side
+--selectDrive.py: Python program to mount the user specific drive depending on user input 
+
+---------
+Folder_2: Configuration Files
+---------
+-->dnsmaq.cong: Containts the DHCP server and TFTP server configuration 
+-->exports: Contains the NFS mount configuration
+
+---------
+Folder_3: Deduplication_Dict(DataStructure)
+---------
+readfile.py: Reads all the user file recursively and deduplicates the data by breaking it down into chunk
+reconstruct.py: Take the chunks and reconstruct the data using the Metadata file which is dictionay in this case
+save.p: The metadata file which is a dictionary, which is serialized and stored
+
+---------
+Folder_4: Deduplication_JSON(DataStructure)
+---------
+readfile.py: Reads all the user file recursively and deduplicates the data by breaking it down into chunk
+reconstruct.py: Take the chunks and reconstruct the data using the Metadata file which is json file in this case
+save.json: The metadata file which is a json, which is serialized and stored
+
+---------
+Folder_5: Deduplication_Database
+---------
+dedup.py: Script to deduplicate the and populate the Metadata in the database.
+database_design.sql: Database design for the metadata
+
+---------
+Folder_6: Server_Side_Scripts
+--------- 
+dedup.sh: Script to call the dedup function (Calls the python script)
+reconstruct.sh: Script to call reconstruction fuction (Calls the python Scripts)
+
+
+
